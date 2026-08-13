@@ -1,0 +1,297 @@
+:root{
+  --nav-gray: #58595c;
+  --red: #DA1F28;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin:0;
+}
+
+h1, ul, p, a, li {
+    font-family: "Albert Sans", sans-serif !important;
+}
+
+/* ===== Header ===== */
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 18px 40px;
+  border-bottom: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,.04);
+  position: relative;
+  z-index: 20;
+  flex-wrap: wrap;
+  gap: 12px;
+  background:#fff;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-family: "Albert Sans", sans-serif !important;
+  font-size: 27px;
+  font-weight: 600;
+  color:#58595c;
+  white-space: nowrap;
+}
+
+/* Hamburger button — hidden on desktop, shown under the breakpoint */
+.nav-toggle{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+  width: 36px;
+  height: 36px;
+  padding:0;
+  background:none;
+  border:none;
+  cursor:pointer;
+  z-index: 30;
+}
+.nav-toggle span{
+  display:block;
+  width: 24px;
+  height: 2px;
+  background: var(--nav-gray);
+  transition: transform .2s ease, opacity .2s ease;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.main-nav{
+  display:flex;
+  align-items:center;
+  justify-content: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.main-nav ul{
+  list-style:none;
+  display:flex;
+  gap: 24px;
+  margin:0;
+  padding:0;
+  flex-wrap: wrap;
+}
+
+.main-nav li{
+  position:relative;
+}
+
+.main-nav a{
+  text-decoration:none;
+  color: var(--nav-gray);
+  font-size: 12px;
+  font-weight: 200;
+  letter-spacing: .2px;
+  display:flex;
+  align-items:center;
+  gap: 4px;
+  padding: 8px 2px;
+  cursor:pointer;
+  transition: color .15s ease;
+}
+
+.main-nav a:hover{
+  color: var(--red);
+}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;
+  overflow:hidden;
+  background-color: #f7f7f7;
+  background-image:
+    radial-gradient(ellipse 900px 500px at 20% 10%, rgba(255,255,255,.9), transparent 60%),
+    radial-gradient(ellipse 700px 400px at 75% 85%, rgba(255,255,255,.7), transparent 55%),
+    repeating-linear-gradient(115deg, rgba(210,210,210,.35) 0px, transparent 3px, transparent 55px, rgba(200,200,200,.3) 58px, transparent 90px),
+    repeating-linear-gradient(25deg, rgba(220,220,220,.25) 0px, transparent 2px, transparent 70px, rgba(210,210,210,.25) 73px, transparent 130px);
+}
+.hero-inner{
+  display:flex;
+  align-items:center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 120px;
+  gap: 30px;
+  position:relative;
+  min-height: 560px;
+}
+.hero-text{
+  flex: 1 1 540px;
+  min-width: 300px;
+  z-index: 2;
+}
+
+.hero-text h1{
+  font-family: "Albert Sans", sans-serif;
+}
+.eyebrow{
+  color: var(--red);
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.eyebrow span{
+  color: var(--red);
+}
+
+h1{
+  font-family: 'Poppins', sans-serif;
+  font-size: 70px;
+  line-height: 1.12;
+  font-weight: 500;
+  margin: 0 0 30px;
+  letter-spacing: -.5px;
+  color:#58595c;
+}
+
+.hero-text p{
+  font-size: 16.5px;
+  line-height: 1.7;
+  max-width: 500px;
+  margin: 0 0 36px;
+  font-weight: 200;
+  color:#58595c;
+}
+.hero-text p b{ font-weight:700; }
+
+.cta{
+  display:inline-block;
+  background: var(--red);
+  color:#fff;
+  font-weight:600;
+  font-size: 14px;
+  letter-spacing: .4px;
+  text-decoration:none;
+  padding: 15px 25px;
+  border-radius: 30px;
+  border: none;
+  cursor:pointer;
+  transition: background .2s ease, transform .15s ease;
+}
+.cta:hover{
+  background:#b81922;
+  transform: translateY(-1px);
+}
+
+.hero-media{
+  flex: 1 1 460px;
+  min-width: 280px;
+  position: relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height: 500px;
+}
+.frame-wrap{
+  position: relative;
+  width: 300px;
+  height: 460px;
+}
+.frame-back{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--red);
+  clip-path: polygon(16% 0, 100% 0, 84% 100%, 0% 100%);
+  transform: translate(-18px, 20px);
+}
+.frame-photo{
+  position:relative;
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+  background: #ddd;
+  clip-path: polygon(16% 0, 100% 0, 84% 100%, 0% 100%);
+}
+.frame-photo img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: 60% 30%;
+  display:block;
+}
+
+/* ===== Large desktop / laptop ===== */
+@media (max-width: 1200px){
+  .hero-inner{ padding: 60px 60px; }
+  h1{ font-size: 58px; }
+}
+
+/* ===== Tablet ===== */
+@media (max-width: 900px){
+  .nav-toggle{ display:flex; }
+
+  .main-nav{
+    display:none;
+    position:absolute;
+    top: 100%;
+    left:0;
+    right:0;
+    background:#fff;
+    flex-direction:column;
+    align-items:flex-start;
+    padding: 10px 24px 20px;
+    box-shadow: 0 8px 12px rgba(0,0,0,.06);
+  }
+  .main-nav.open{
+    display:flex;
+  }
+  .main-nav ul{
+    flex-direction:column;
+    gap: 4px;
+    width:100%;
+  }
+  .main-nav li{
+    width:100%;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .main-nav a{
+    padding: 12px 4px;
+    font-size: 13px;
+  }
+
+  h1{ font-size: 44px; }
+  .eyebrow{ font-size: 16px; }
+  .hero-inner{ flex-direction:column; padding: 40px 24px 60px; text-align:left; }
+  .hero-media{ min-height: 380px; order: -1; }
+  .frame-wrap{ width: 230px; height: 370px; }
+  .frame-back{ transform: translate(-12px, 14px); }
+  .hero-text p{ max-width: 100%; }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 520px){
+  header{ padding: 14px 20px; }
+  .logo{ font-size: 22px; }
+  h1{ font-size: 32px; }
+  .eyebrow{ font-size: 14px; }
+  .hero-text p{ font-size: 15px; }
+  .cta{ width:100%; text-align:center; padding: 16px 25px; }
+  .frame-wrap{ width: 190px; height: 300px; }
+}
+
+/* ===== Very small phones ===== */
+@media (max-width: 360px){
+  h1{ font-size: 27px; }
+  .frame-wrap{ width: 160px; height: 260px; }
+}
