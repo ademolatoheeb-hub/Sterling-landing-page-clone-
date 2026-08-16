@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body{
   margin:0;
 }
@@ -20,7 +24,7 @@ header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding: 18px 40px;
+  padding: 14px 32px;
   border-bottom: none;
   box-shadow: 0 1px 3px rgba(0,0,0,.04);
   position: relative;
@@ -34,11 +38,19 @@ header{
   display:flex;
   align-items:center;
   gap:8px;
+  white-space: nowrap;
+}
+.logo img{
+  height: 36px;
+  width: 36px;
+  object-fit: contain;
+  display:block;
+}
+.logo span{
   font-family: "Albert Sans", sans-serif !important;
   font-size: 27px;
   font-weight: 600;
-  color:#58595c;
-  white-space: nowrap;
+  color: var(--nav-gray);
 }
 
 /* Hamburger button — hidden on desktop, shown under the breakpoint */
@@ -77,14 +89,15 @@ header{
   display:flex;
   align-items:center;
   justify-content: flex-end;
-  gap: 24px;
+  gap: 6px;
   flex-wrap: wrap;
+  flex: 1 1 auto;
 }
 
 .main-nav ul{
   list-style:none;
   display:flex;
-  gap: 24px;
+  gap: 4px;
   margin:0;
   padding:0;
   flex-wrap: wrap;
@@ -97,13 +110,13 @@ header{
 .main-nav a{
   text-decoration:none;
   color: var(--nav-gray);
-  font-size: 12px;
-  font-weight: 200;
+  font-size: 12.5px;
+  font-weight: 600;
   letter-spacing: .2px;
   display:flex;
   align-items:center;
-  gap: 4px;
-  padding: 8px 2px;
+  gap: 5px;
+  padding: 10px 10px;
   cursor:pointer;
   transition: color .15s ease;
 }
@@ -116,12 +129,14 @@ header{
 .hero{
   position:relative;
   overflow:hidden;
-  background-color: #f7f7f7;
+  background-color: #eeeeee;
   background-image:
-    radial-gradient(ellipse 900px 500px at 20% 10%, rgba(255,255,255,.9), transparent 60%),
-    radial-gradient(ellipse 700px 400px at 75% 85%, rgba(255,255,255,.7), transparent 55%),
-    repeating-linear-gradient(115deg, rgba(210,210,210,.35) 0px, transparent 3px, transparent 55px, rgba(200,200,200,.3) 58px, transparent 90px),
-    repeating-linear-gradient(25deg, rgba(220,220,220,.25) 0px, transparent 2px, transparent 70px, rgba(210,210,210,.25) 73px, transparent 130px);
+    radial-gradient(ellipse 1000px 500px at 15% 0%, rgba(255,255,255,.95), transparent 55%),
+    radial-gradient(ellipse 800px 500px at 85% 100%, rgba(255,255,255,.85), transparent 55%),
+    linear-gradient(115deg, transparent 30%, rgba(0,0,0,.05) 42%, transparent 48%, rgba(255,255,255,.7) 55%, transparent 62%),
+    linear-gradient(25deg, transparent 20%, rgba(0,0,0,.04) 35%, transparent 45%, rgba(255,255,255,.6) 60%, transparent 75%),
+    linear-gradient(200deg, transparent 60%, rgba(0,0,0,.03) 68%, transparent 76%),
+    #eeeeee;
 }
 .hero-inner{
   display:flex;
@@ -206,6 +221,7 @@ h1{
   position: relative;
   width: 300px;
   height: 460px;
+  transform: rotate(-4deg);
 }
 .frame-back{
   position:absolute;
@@ -213,7 +229,7 @@ h1{
   height: 100%;
   background: var(--red);
   clip-path: polygon(16% 0, 100% 0, 84% 100%, 0% 100%);
-  transform: translate(-18px, 20px);
+  transform: translate(-16px, 18px);
 }
 .frame-photo{
   position:relative;
@@ -231,7 +247,386 @@ h1{
   display:block;
 }
 
-/* ===== Large desktop / laptop ===== */
+/* ===== Personal Banking Perks ===== */
+.perks{
+  position:relative;
+  overflow:hidden;
+  background-color: #dfe6ea;
+  background-image:
+    radial-gradient(ellipse 700px 500px at 8% 20%, rgba(255,190,120,.35), transparent 55%),
+    radial-gradient(ellipse 900px 600px at 55% 40%, rgba(255,255,255,.85), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 95% 80%, rgba(160,190,210,.5), transparent 55%),
+    linear-gradient(120deg, #eef2f4, #dfe6ea);
+}
+.perks-inner{
+  display:flex;
+  align-items:center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 90px 120px;
+  gap: 60px;
+  position:relative;
+  min-height: 560px;
+}
+.perks-media{
+  flex: 1 1 400px;
+  min-width: 260px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height: 480px;
+}
+.perks-frame-wrap{
+  position: relative;
+  width: 300px;
+  height: 480px;
+  transform: rotate(4deg);
+}
+.perks-frame-back{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--red);
+  clip-path: polygon(8% 0, 100% 0, 92% 100%, 0% 100%);
+  transform: translate(-14px, 14px);
+}
+.perks-frame-photo{
+  position:relative;
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+  background: #ddd;
+  clip-path: polygon(8% 0, 100% 0, 92% 100%, 0% 100%);
+}
+.perks-frame-photo img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+  display:block;
+}
+
+.perks-text{
+  flex: 1 1 480px;
+  min-width: 300px;
+}
+.perks-text h2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 56px;
+  line-height: 1.1;
+  font-weight: 700;
+  margin: 0 0 24px;
+  letter-spacing: -.5px;
+  color:#58595c;
+}
+.perks-text p{
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 0 36px;
+  font-weight: 400;
+  color:#6b6c6f;
+}
+
+@media (max-width: 1200px){
+  .perks-inner{ padding: 70px 60px; }
+  .perks-text h2{ font-size: 46px; }
+}
+
+@media (max-width: 900px){
+  .perks-inner{ flex-direction:column; padding: 60px 24px; text-align:left; }
+  .perks-text h2{ font-size: 38px; }
+  .perks-frame-wrap{ width: 230px; height: 370px; }
+}
+
+@media (max-width: 520px){
+  .perks-text h2{ font-size: 30px; }
+  .perks-text p{ font-size: 15px; }
+  .perks-frame-wrap{ width: 190px; height: 300px; }
+}
+
+/* ===== Business Banking Brilliance ===== */
+.biz{
+  position:relative;
+  overflow:hidden;
+  background-color: #f0f0f0;
+  background-image:
+    radial-gradient(ellipse 900px 500px at 10% 30%, rgba(255,255,255,.9), transparent 55%),
+    radial-gradient(ellipse 800px 600px at 60% 70%, rgba(200,200,200,.4), transparent 60%),
+    linear-gradient(100deg, #f7f7f7, #e9e9e9);
+}
+.biz-inner{
+  display:flex;
+  align-items:center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 90px 120px;
+  gap: 60px;
+  position:relative;
+  min-height: 560px;
+}
+.biz-text{
+  flex: 1 1 480px;
+  min-width: 300px;
+}
+.biz-text h2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 56px;
+  line-height: 1.1;
+  font-weight: 700;
+  margin: 0 0 24px;
+  letter-spacing: -.5px;
+  color:#58595c;
+}
+.biz-text p{
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 0 36px;
+  font-weight: 400;
+  color:#6b6c6f;
+}
+
+.biz-media{
+  flex: 1 1 400px;
+  min-width: 260px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height: 480px;
+}
+.biz-frame-wrap{
+  position: relative;
+  width: 300px;
+  height: 480px;
+  transform: rotate(-4deg);
+}
+.biz-frame-back{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--red);
+  clip-path: polygon(16% 0, 100% 0, 84% 100%, 0% 100%);
+  transform: translate(-16px, 18px);
+}
+.biz-frame-photo{
+  position:relative;
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+  background: #ddd;
+  clip-path: polygon(16% 0, 100% 0, 84% 100%, 0% 100%);
+}
+.biz-frame-photo img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+  display:block;
+}
+
+@media (max-width: 1200px){
+  .biz-inner{ padding: 70px 60px; }
+  .biz-text h2{ font-size: 46px; }
+}
+
+@media (max-width: 900px){
+  .biz-inner{ flex-direction:column-reverse; padding: 60px 24px; text-align:left; }
+  .biz-text h2{ font-size: 38px; }
+  .biz-frame-wrap{ width: 230px; height: 370px; }
+}
+
+@media (max-width: 520px){
+  .biz-text h2{ font-size: 30px; }
+  .biz-text p{ font-size: 15px; }
+  .biz-frame-wrap{ width: 190px; height: 300px; }
+}
+
+/* ===== Corporate Banking Convenience ===== */
+.corp{
+  position:relative;
+  overflow:hidden;
+  background-color: #cdd8de;
+  background-image:
+    radial-gradient(ellipse 800px 500px at 15% 15%, rgba(190,215,235,.6), transparent 55%),
+    radial-gradient(ellipse 900px 600px at 60% 50%, rgba(255,255,255,.6), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 90% 85%, rgba(140,175,200,.5), transparent 55%),
+    linear-gradient(120deg, #d7e0e5, #b9c7cf);
+}
+.corp-inner{
+  display:flex;
+  align-items:center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 90px 120px;
+  gap: 60px;
+  position:relative;
+  min-height: 560px;
+}
+.corp-media{
+  flex: 1 1 400px;
+  min-width: 260px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height: 480px;
+}
+.corp-frame-wrap{
+  position: relative;
+  width: 300px;
+  height: 480px;
+  transform: rotate(4deg);
+}
+.corp-frame-back{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--red);
+  clip-path: polygon(8% 0, 100% 0, 92% 100%, 0% 100%);
+  transform: translate(-14px, 14px);
+}
+.corp-frame-photo{
+  position:relative;
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+  background: #ddd;
+  clip-path: polygon(8% 0, 100% 0, 92% 100%, 0% 100%);
+}
+.corp-frame-photo img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+  display:block;
+}
+
+.corp-text{
+  flex: 1 1 480px;
+  min-width: 300px;
+}
+.corp-text h2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 56px;
+  line-height: 1.1;
+  font-weight: 700;
+  margin: 0 0 24px;
+  letter-spacing: -.5px;
+  color:#58595c;
+}
+.corp-text p{
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 0 36px;
+  font-weight: 400;
+  color:#5c6266;
+}
+.corp-text .cta{
+  white-space: nowrap;
+}
+
+@media (max-width: 1200px){
+  .corp-inner{ padding: 70px 60px; }
+  .corp-text h2{ font-size: 46px; }
+}
+
+@media (max-width: 900px){
+  .corp-inner{ flex-direction:column; padding: 60px 24px; text-align:left; }
+  .corp-text h2{ font-size: 38px; }
+  .corp-frame-wrap{ width: 230px; height: 370px; }
+  .corp-text .cta{ white-space: normal; }
+}
+
+@media (max-width: 520px){
+  .corp-text h2{ font-size: 30px; }
+  .corp-text p{ font-size: 15px; }
+  .corp-frame-wrap{ width: 190px; height: 300px; }
+}
+
+/* ===== Footer ===== */
+.site-footer{
+  background: #6f6f6f;
+  position:relative;
+  padding-top: 4px;
+}
+.site-footer::before{
+  content:"";
+  display:block;
+  height: 4px;
+  background: linear-gradient(90deg, #4a90c4, #8b6fa8, #d9536b);
+}
+.footer-inner{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 50px 120px 60px;
+  display:flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.footer-col{
+  flex: 1 1 180px;
+  min-width: 160px;
+}
+.footer-col h3{
+  color:#fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  margin: 0 0 18px;
+}
+.footer-col .footer-subhead{
+  margin-top: 24px;
+}
+.footer-col ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap: 12px;
+}
+.footer-col a{
+  color:#d8d8d8;
+  text-decoration:none;
+  font-size: 14px;
+  transition: color .15s ease;
+}
+.footer-col a:hover{
+  color:#fff;
+}
+.footer-social{
+  display:flex;
+  gap: 12px;
+  margin-top: 22px;
+}
+.footer-social a{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#d8d8d8;
+  transition: color .15s ease, border-color .15s ease;
+}
+.footer-social a svg{
+  width: 20px;
+  height: 20px;
+}
+.footer-social a:hover{
+  color:#fff;
+}
+
+@media (max-width: 900px){
+  .footer-inner{ padding: 40px 24px 50px; gap: 32px; }
+  .footer-col{ flex: 1 1 45%; }
+}
+
+@media (max-width: 520px){
+  .footer-inner{ flex-direction: column; gap: 30px; }
+  .footer-col{ flex: 1 1 auto; }
+}
 @media (max-width: 1200px){
   .hero-inner{ padding: 60px 60px; }
   h1{ font-size: 58px; }
@@ -240,6 +635,7 @@ h1{
 /* ===== Tablet ===== */
 @media (max-width: 900px){
   .nav-toggle{ display:flex; }
+  .search-btn{ display:none; }
 
   .main-nav{
     display:none;
@@ -268,6 +664,7 @@ h1{
   .main-nav a{
     padding: 12px 4px;
     font-size: 13px;
+    justify-content: space-between;
   }
 
   h1{ font-size: 44px; }
