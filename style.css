@@ -125,6 +125,58 @@ header{
   color: var(--red);
 }
 
+.chevron{
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid #9a9b9e;
+  display:inline-block;
+  transition: border-top-color .15s ease;
+}
+.main-nav a:hover .chevron{
+  border-top-color: var(--red);
+}
+
+.search-btn{
+  background:none;
+  border:none;
+  cursor:pointer;
+  color: var(--nav-gray);
+  width: 22px;
+  height: 22px;
+  padding:0;
+  margin-left: 18px;
+  flex-shrink:0;
+}
+.search-btn svg{
+  width:100%;
+  height:100%;
+}
+
+/* Floating chat button */
+.chat-fab{
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--red);
+  color:#fff;
+  border:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,.2);
+  z-index: 50;
+}
+.chat-fab svg{
+  width: 24px;
+  height: 24px;
+}
+
 /* ===== Hero ===== */
 .hero{
   position:relative;
